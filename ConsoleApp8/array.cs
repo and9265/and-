@@ -21,5 +21,35 @@ namespace ConsoleApp8
             }
 
         }
+        public void MaxArray()
+        {
+            int MaX=0;
+            foreach (int el in _array)
+            {
+                if (MaX < el)
+                    MaX = el;
+            }
+            Console.Write(MaX);
+        }
+        public void MinArray()
+        {
+            int MiN = 100000;
+            foreach (int el in _array)
+            {
+                if (MiN > el)
+                    MiN = el;
+            } }
+            public void CrArray()
+            {
+                int cr = 0;
+                foreach(int el in _array)
+                {
+                    cr += el;
+                }
+            int len = _array.Length;
+            cr /= len;
+            Console.Write(cr);
+            }
+        
     }
 }
