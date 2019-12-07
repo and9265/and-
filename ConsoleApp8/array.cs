@@ -39,7 +39,7 @@ namespace ConsoleApp8
                 if (MiN > el)
                     MiN = el;
             } }
-            public void CrArray()
+        public void CrArray()
             {
                 int cr = 0;
                 foreach(int el in _array)
@@ -50,6 +50,35 @@ namespace ConsoleApp8
             cr /= len;
             Console.Write(cr);
             }
-        
+        public void SumArray()
+        {
+            int sum=0;
+            foreach(int el in _array)
+            {
+                sum += el;
+            }
+            Console.Write(sum);
+        }
+        public void ProisArray()
+        {
+            int pro = 1;
+            foreach (int el in _array)
+            {
+                pro *= el;
+            }
+            Console.Write(pro);
+        }
+        public bool FindArray(int a)
+        {
+            bool o=false;
+            foreach (int el in _array)
+            {
+                if (a == el)
+                    o = true;
+                else
+                    return false;
+            }
+            return o;
+        }
     }
 }
