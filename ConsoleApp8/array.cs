@@ -21,24 +21,26 @@ namespace ConsoleApp8
             }
 
         }
-        public void MaxArray()
+        public int MaxArray()
         {
-            int MaX=0;
+            int MaX=_array[0];
             foreach (int el in _array)
             {
                 if (MaX < el)
                     MaX = el;
             }
-            Console.Write(MaX);
+            return MaX;
         }
-        public void MinArray()
+        public int MinArray()
         {
-            int MiN = 100000;
+            int MiN = _array[0];
             foreach (int el in _array)
             {
                 if (MiN > el)
                     MiN = el;
-            } }
+            }
+            return MiN;
+        }
         public void CrArray()
             {
                 int cr = 0;
@@ -50,23 +52,23 @@ namespace ConsoleApp8
             cr /= len;
             Console.Write(cr);
             }
-        public void SumArray()
+        public int SumArray()
         {
             int sum=0;
             foreach(int el in _array)
             {
                 sum += el;
             }
-            Console.Write(sum);
+            return sum;
         }
-        public void ProisArray()
+        public int ProisArray()
         {
             int pro = 1;
             foreach (int el in _array)
             {
                 pro *= el;
             }
-            Console.Write(pro);
+            return pro;
         }
         public bool FindArray(int a)
         {
