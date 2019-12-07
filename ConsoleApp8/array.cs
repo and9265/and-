@@ -41,16 +41,13 @@ namespace ConsoleApp8
             }
             return MiN;
         }
-        public void CrArray()
+        public int CrArray()
             {
-                int cr = 0;
-                foreach(int el in _array)
-                {
-                    cr += el;
-                }
+                int cr = SumArray(); ;
+            
             int len = _array.Length;
             cr /= len;
-            Console.Write(cr);
+            return cr;
             }
         public int SumArray()
         {
@@ -61,9 +58,9 @@ namespace ConsoleApp8
             }
             return sum;
         }
-        public int ProisArray()
+        public long  ProisArray()
         {
-            int pro = 1;
+            long pro = 1;
             foreach (int el in _array)
             {
                 pro *= el;
@@ -72,15 +69,10 @@ namespace ConsoleApp8
         }
         public bool FindArray(int a)
         {
-            bool o=false;
             foreach (int el in _array)
-            {
                 if (a == el)
-                    o = true;
-                else
-                    return false;
-            }
-            return o;
+                    return true;
+            return false;
         }
     }
 }
