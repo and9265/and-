@@ -10,12 +10,16 @@ namespace ConsoleApp8
     {
         static void Main(string[] args)
         {
-            int[] arr = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-            foreach(int el in arr)
-            {
-                Console.Write(el+" ");
-            }
+            Array array = new Array();
+           
+            array.AddArray(11);
+            array.PrintArray();
+            Console.WriteLine("");
+            Console.WriteLine("-------------------------------------");
+            array.FindArrayIndex(3);
+            Console.WriteLine(array.FindArrayIndex(11));
             Console.ReadKey();
+
         }
     }
 }
