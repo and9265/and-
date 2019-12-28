@@ -8,41 +8,41 @@ namespace ConsoleApp8
 {
     class Array
     {
-        private int [] _array;
+        private int[] _array;
         private int[] _array2;
         public Array()
         {
             _array = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
         }
-        public Array(int[] array,int lengt)
+        public Array(int[] array, int lengt)
         {
             _array = new int[lengt];
             for (int i = 0; i < lengt; i++)
                 _array[i] = array[i];
         }
-        public Array(Array []array)
+        public Array(Array[] array)
         {
-            
-           Array[] _array = new Array[LenghtArray()];
+
+            Array[] _array = new Array[LenghtArray()];
             for (int i = 0; i < LenghtArray(); i++)
                 _array[i] = array[i];
-                
+
 
         }
         public int LenghtArray()
 
         {
-            int l=0;
-            foreach(var el in _array)
+            int l = 0;
+            foreach (var el in _array)
             {
-                
-                    l++;
+
+                l++;
             }
             return l;
         }
         public void PrintArray()
         {
-            foreach(int el in _array)
+            foreach (int el in _array)
             {
                 Console.Write(el + " ");
             }
@@ -50,7 +50,7 @@ namespace ConsoleApp8
         }
         public int MaxArray()
         {
-            int MaX=_array[0];
+            int MaX = _array[0];
             foreach (int el in _array)
             {
                 if (MaX < el)
@@ -69,23 +69,23 @@ namespace ConsoleApp8
             return MiN;
         }
         public int CrArray()
-            {
-                int cr = SumArray(); ;
-            
+        {
+            int cr = SumArray(); ;
+
             int len = _array.Length;
             cr /= len;
             return cr;
-            }
+        }
         public int SumArray()
         {
-            int sum=0;
-            foreach(int el in _array)
+            int sum = 0;
+            foreach (int el in _array)
             {
                 sum += el;
             }
             return sum;
         }
-        public long  ProisArray()
+        public long ProisArray()
         {
             long pro = 1;
             foreach (int el in _array)
@@ -96,7 +96,7 @@ namespace ConsoleApp8
         }
         public bool FindArray(int a)
         {
-            
+
             foreach (int el in _array)
                 if (a == el)
                     return true;
@@ -104,23 +104,23 @@ namespace ConsoleApp8
         }
         public void AddArray(int a)
         {
-            int la = LenghtArray()+1;
-           int[] buffer = new int[la];
-            for (int i = 0; i < la-1; i++)
+            int la = LenghtArray() + 1;
+            int[] buffer = new int[la];
+            for (int i = 0; i < la - 1; i++)
                 buffer[i] = _array[i];
-            buffer[la-1] = a;
-           _array = new int[la];
+            buffer[la - 1] = a;
+            _array = new int[la];
             for (int i = 0; i < la; i++)
                 _array[i] = buffer[i];
-            
+
         }
         public void DelArrayByIndex(int number)
         {
-            int la = LenghtArray();
-            int[] buffer = new int[la-1];
-            int k=0;
-            bool ka=true;
-            for (int i = 0; i < la; i++)
+            
+            int[] buffer = new int[LenghtArray() - 1];
+            int k = 0;
+            bool ka = true;
+            for (int i = 0; i < LenghtArray(); i++)
             {
                 if (ka == true)
                     k = i;
@@ -133,48 +133,126 @@ namespace ConsoleApp8
                 }
                 else { k--; ka = false; }
             }
-                _array = new int[la-1];
-            
-                for (int i = 0; i < la-1; i++)
-                    _array[i] = buffer[i];
-            
+            _array = new int[LenghtArray() - 1];
+
+            for (int i = 0; i < LenghtArray() - 1; i++)
+                _array[i] = buffer[i];
+
         }
         public void DelArrayByNumber(int number)
         {
-            int[] buffer = new int[LenghtArray()];
+            
             int k = 0;
-            bool ja = true;
-            int j=0;
-            for (int i = 0; i < LenghtArray(); i++)
+            int b = 0;
+            bool ka = true;
+            foreach (var el in _array)
             {
-                buffer[i] = _array[i];
-                if (_array[i] == a)
+                if (el == number)
                     k++;
             }
-            _array = new int[LenghtArray() - k];
-            for(int i=0;i<LenghtArray();i++)
-            { if (ja == true)
-                    j = k;
-                else
-                    j++;
-                if (buffer[i] != a)
-                { _array[j] = buffer[i]; }
-                else { j--; ja = false; }
-
+            int u = LenghtArray();
+            int y = LenghtArray() - k;
+            int[] buffer = new int[y];
+            for(int i=0;i<u;i++)
+            {
+                if (_array[i] == number)
+                    b++;
+                buffer[i-b] = _array[i];
             }
+            _array = new int[y];
+            for(int i=0;i<y;i++)
+            {
+                _array[i] = buffer[i];
+            }
+                
+            
+
 
         }
         public int FindArrayIndex(int number)
         {
-            int b=-1;
-            for(int i=0;i<LenghtArray();i++)
+            int b = -1;
+            for (int i = 0; i < LenghtArray(); i++)
             {
                 if (_array[i] == number)
                     b = i;
             }
             return b;
-                
+
         }
+        public void SortArrayPusir(bool vozrast = true)
+        {
+            if (vozrast == true)
+            {
+                for (int i = 0; i < LenghtArray(); i++)
+                {
+                    for (int j = 0; j < LenghtArray() - 1 - i; j++)
+                    {
+                        if (_array[j] > _array[j + 1])
+                        {
+                            int buf = _array[j];
+                            _array[j] = _array[j + 1];
+                            _array[j + 1] = buf;
+                        }
+                    }
+
+                }
+            }
+            else
+            {
+                for (int i = 0; i < LenghtArray(); i++)
+                {
+                    for (int j = 0; j < LenghtArray() - 1 - i; j++)
+                    {
+                        if (_array[j] < _array[j + 1])
+                        {
+                            int buf = _array[j];
+                            _array[j] = _array[j + 1];
+                            _array[j + 1] = buf;
+                        }
+                    }
+
+                }
+            }
+
+        }
+        public void SortArrayVstavka()
+        {
+            int x;
+            long i, j;
+            int b = _array[0];
+            _array[0] = MinArray();
+            for (i = 1; i < LenghtArray(); i++)
+            {
+                x = _array[i];
+
+                for (j = i - 1; _array[j] > x; j--)
+                    _array[j + 1] = _array[j];
+
+                _array[j + 1] = x;
+            }
+
+            for (j = 1; j < LenghtArray() && _array[j] < b; j++)
+                _array[j - 1] = _array[j];
+             _array[j - 1] = b;
+        }
+        public void SortArrayVibor()
+        {
+            int min; int t;
+            for (int i = 0; i < LenghtArray() - 1; i++)
+            {
+                min = i;
+                for (int j = i + 1; j < LenghtArray(); j++)
+                {
+                    if (_array[j] < _array[min])
+                        min = j;
+                }
+                t = _array[i];
+                _array[i] = _array[min];
+                _array[min] = t;
+            }
+        }
+
 
     }
 }

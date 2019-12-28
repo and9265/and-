@@ -16,8 +16,8 @@ namespace ConsoleApp8
             array.PrintArray();
             Console.WriteLine("");
             Console.WriteLine("-------------------------------------");
-            array.FindArrayIndex(3);
-            Console.WriteLine(array.FindArrayIndex(11));
+            array.SortArrayVibor();
+            array.PrintArray();
             Console.ReadKey();
 
         }
