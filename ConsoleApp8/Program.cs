@@ -11,14 +11,14 @@ namespace ConsoleApp8
         static void Main(string[] args)
         {
             Array array = new Array();
-           
+            int[] arra3 = new int[15]{10,9,8,7,6,5,4,3,2,1,0,-1,12,-3,-4 }; 
+            Array array2 = new Array(arra3,15);
             array.AddArray(11);
             array.PrintArray();
             Console.WriteLine("");
             Console.WriteLine("-------------------------------------");
-            array.SortArrayVibor();
-            array.PrintArray();
-            Console.ReadKey();
+
+           Console.ReadKey();
 
         }
     }

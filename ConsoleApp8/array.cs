@@ -9,7 +9,7 @@ namespace ConsoleApp8
     class Array
     {
         private int[] _array;
-        private int[] _array2;
+        //private int[] _array2;
         public Array()
         {
             _array = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
@@ -252,6 +252,97 @@ namespace ConsoleApp8
                 _array[min] = t;
             }
         }
+        public int ReturnNumberArray(int index)
+        {
+            return _array[index];
+        }
+        public void NewNumberArray(int index,int number)
+        {
+            for(int i=0;i<LenghtArray();i++)
+            {
+                if (i == index)
+                    _array[i] = number;
+            }
+        }
+        public int ChetArrayNumber(bool poloj=true)
+        {
+            int n=0;
+            if (poloj == true)
+            {
+                foreach (var el in _array)
+                {
+                    if (el > 0)
+                        n++;
+                }
+            }
+            else
+            {
+                foreach (var el in _array)
+                {
+                    if (el < 0)
+                        n++;
+                }
+            }
+            return n;
+        }
+        public int KolvoNumberArray(int number)
+        {
+            int n = 0;
+            foreach(var el in _array)
+            {
+                if (el == number)
+                    n++;
+            }
+            return n;
+        }
+        public int ChetNechetArray(bool chet=true)
+        {
+            int n = 0;
+            if(chet==true)
+            {
+                foreach (var el in _array)
+                {
+                    if (el %2== 0)
+                        n++;
+                }
+            }
+            else
+            {
+                foreach (var el in _array)
+                {
+                    if (el %2!= 0)
+                        n++;
+                }
+            }
+            return n;
+        }
+        public bool ProverkaSortVozrastArray(bool vaozrast=true)
+        {
+            if(vaozrast==true)
+            {
+                for (int i = 0; i < LenghtArray() - 1; i++)
+                {
+                    if (_array[i] > _array[i + 1])
+                        return false;
+
+                }
+                return true;
+            }
+            else
+            {
+                for (int i = 0; i < LenghtArray() - 1; i++)
+                {
+                    if (_array[i] < _array[i + 1])
+                        return false;
+
+                }
+                return true;
+            }
+        }
+
+
+
+
 
 
     }
