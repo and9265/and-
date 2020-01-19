@@ -12,7 +12,7 @@ namespace ConsoleApp8
         {
             Array array = new Array();
             int[] arra3 = new int[15]{10,9,8,7,6,5,4,3,2,1,0,-1,12,-3,-4 }; 
-            Array array2 = new Array(arra3,15);
+            Array array2 = new Array(arra3);
             array.AddArray(11);
             array.PrintArray();
             Console.WriteLine("");
