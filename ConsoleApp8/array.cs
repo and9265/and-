@@ -31,6 +31,27 @@ namespace ConsoleApp8
         {
             Array _array = array;
         }
+        public int this[int index]
+        {
+            get
+            {  try
+                {
+                    if (index >= 0 && index <= LenghtArray)
+                        return _array[index];
+                    else
+                        throw new Exception("не корректный индекс");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Ошибка: {e.Message}");
+                    return _array[0];
+                }
+            }
+            set
+            {
+                _array[index] = value;
+            }
+        }
         public int LenghtArray
 
         {
@@ -113,9 +134,9 @@ namespace ConsoleApp8
             {
                 int la = LenghtArray + 1;
                 int[] buffer = new int[la];
-                for (int i = 0; i < la - 1; i++)
+                for (int i = 0; i < la-2 ; i++)
                     buffer[i] = _array[i];
-                buffer[la - 1] = a;
+                buffer[la-2] = a;
                 _array = new int[la];
                 for (int i = 0; i < la; i++)
                     _array[i] = buffer[i];
